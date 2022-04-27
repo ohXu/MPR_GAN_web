@@ -1,0 +1,73 @@
+/** {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+.container {
+    font-size: 14pt;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #000444;
+}
+
+.title {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 32pt;
+    font-weight: 700;
+    color: #444;
+    margin: 0;
+    text-align: center;
+}
+
+.section_title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20pt;
+    line-height: 100%;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #444;
+}
+
+.section {
+    text-align: justify;
+    font-size: 13pt;
+    /*margin-right: -15px;*/
+    /*margin-left: -15px;*/
+}
+
+.author {
+    font-size: 15pt;
+    font-weight: 600;
+    text-align: center;
+}
+
+.shadow {
+    -webkit-box-shadow: 5px 5px 5px #aaa;
+    -moz-box-shadow: 5px 5px 5px #aaa;
+    box-shadow: 5px 5px 5px #aaa;
+    margin-bottom: 10px;
+}
+
+.img_authors {
+    position: relative;
+    max-width: 130px;
+    max-height: 130px
+}
+
+.img_links {
+    position: relative;
+    max-width: 100px;
+    max-height: 100px
+}
+
+img {
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-crisp-edges; /*Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}

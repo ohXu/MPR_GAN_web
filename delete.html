@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MPRGAN</title>
+    <link href="css/display.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body style="background-color:rgba(255, 255, 255, 1.0);">
+
+<div class="container">
+    <!-- ===================== TITLE ========================== -->
+    <div>
+        <h1 class="title">MPR-GAN: A novel neural rendering framework for MLS point cloud</h1>
+    </div>
+
+    <!-- ===================== AUTHER ==========================   -->
+    <div style="text-align: center; color: #4682B4">
+        <div class="row row-eq-height" style="margin-bottom: 0; margin-top: 10px">
+            <div class="col-sm-12 col-sm-offset-1">
+                <div class="col-sm-2">
+                    <div class="author">
+                        <span>Qingyang Xu</span>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+
+                    <div class="author">
+                        <span>Xuefeng Guan</span>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+
+                    <div class="author">
+                        <span>Jun Cao</span>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+
+                    <div class="author">
+                        <span>Yanli Ma</span>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+
+                    <div class="author">
+                        <span>Huayi Wu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p style="color: #4682B4; font-size: 12pt; margin-top: 10px">State Key Laboratory of Information Engineering
+                in Surveying
+                Mapping and Remote Sensing, Wuhan University
+            </p>
+        </div>
+    </div>
+    <br/>
+
+    <!-- ======================= VIDEO ======================== -->
+    <center>
+        <video id="video1" width="880" style="margin-bottom:20px;" controls="controls" loop="loop" muted>
+            <source src="source/video/video.mp4" type="video/mp4"/>
+        </video>
+        <br/>
+    </center>
+
+    <!-- ===================== TL;DR ======================= -->
+    <div>
+        <div class="row section">
+            <div class="section_title">Motivations</div>
+            <p class="section" style="text-indent: 2em;">Efficient point cloud visualization is indispensable for
+                practical applications. In the context of point cloud visualization, 3D rendering can be viewed as the
+                kernel that transforms 3D points into a 2D scene image. Compared with traditional point-based rendering
+                (PBR), neural image-based rendering (NIBR) has gradually emerged as a feasible solution for point cloud
+                rendering. However, two difficult challenges remain for NIBR: (1) accurate image inpainting for the
+                image projected from the sparse point cloud; (2) realistic color generation for points that have only
+                geometric coordinates and reflectance information.</p>
+        </div>
+    </div>
+    <br/>
+
+    <!-- ===================== ABSTRACT ======================= -->
+    <div>
+        <div class="row section">
+            <div class="section_title">Abstract</div>
+            <p class="section" style="text-indent: 2em;">
+                we propose a novel neural rendering framework based on deep generative learning for massive point cloud,
+                named MPR-GAN. In this framework, perspective projection with intrinsic parameters scaling and
+                cumulative distribution normalization is first utilized to transform the 3D point cloud into a compact
+                2D image; a CGAN-based rendering model is then proposed to generate a photorealistic scene image from
+                the projected 2D image. In this CGAN model, the asymmetric encoder-decoder generator can implement
+                inpainting and true colorization through the use of context feature capturing and edge information
+                perception; moreover, a multi-scale discriminator is built to increase the quality of the generated
+                images, improving global consistency and detail preservation.
+            </p>
+            <br/>
+            <div style="text-align: center">
+                <img src="source/img/Fig0.jpg" width="80%">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <!-- ===================== Main idea ======================= -->
+    <div>
+        <div class="row section">
+            <div class="section_title">Contributions</div>
+            <p class="section" style="text-indent: 2em;margin-bottom: 5px;">
+                This paper has the following contributions:
+            </p>
+            <ul>
+                <li style="text-align:justify;margin-bottom: 5px;">An effective point cloud transformation module is
+                    implemented to transform sparse MLS point cloud into a dense 2D image; in this process, intrinsic
+                    parameters scaling can reduce training time and enhance context feature extraction, while cumulative
+                    distribution (CD) normalization makes features follow a uniform distribution and demonstrates robust
+                    noise resistance capability.
+                </li>
+                <li style="text-align:justify;margin-bottom: 5px;">A novel CGAN-based rendering model is proposed to
+                    generate a photorealistic and colorful scene image. In this model, an asymmetric encoder-decoder
+                    generator conducts inpainting, true colorization is achieved by context feature capturing and edge
+                    information perception, and a multi-scale discriminator is built to improve the quality of the
+                    generated images with global consistency and detail preservation.
+                </li>
+                <li style="text-align:justify;margin-bottom: 5px;">Quantitative experiments demonstrate that the
+                    proposed neural rendering framework can achieve photorealistic rendering of sparse MLS point cloud
+                    in an end-to-end manner, while also being computationally efficient enough to support real-time
+                    rendering.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <!-- ======================= RESULTS ====================== -->
+    <div class="row section">
+        <div class="section_title">Results</div>
+        <br/>
+        <div style="text-align: center">
+            <img src="source/img/Fig1.jpg" width="80%">
+        </div>
+        <br/>
+        <p align="center">
+            <i>
+                The generated scene images on the KITTI dataset
+            </i>
+        </p>
+        <div style="text-align: center; margin-top: 40px">
+            <img src="source/img/Fig2.jpg" width="80%">
+        </div>
+        <br/>
+        <p align="center">
+            <i>
+                The generated scene images on the PandaSet dataset
+            </i>
+        </p>
+
+        <div style="text-align: center; margin-top: 40px">
+            <img src="source/img/Fig3.jpg" width="70%">
+        </div>
+        <br/>
+        <p>
+            <i>
+                MPR-GAN is not limited to render only point cloud in the driving direction ahead, but also can generate
+                photorealistic scene images in different view directions
+            </i>
+        </p>
+    </div>
+    <br/>
+</div>
+</body>
+</html>
